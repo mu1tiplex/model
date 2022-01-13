@@ -1,0 +1,569 @@
+2002-11-21 10:47  mpeeters
+
+	* Makefile.in, cowner.h, eigenvalues.h, integrator.h, invariant.h,
+	lusolve.h, newtonroot.h, normfunction.h, odesystem.h, rootscan.h,
+	ssa.h, timeframe.h, vfwithbump.h (utags: gcc3_2-20021121): Modified
+	C++ code to compile under gcc 3.2 (implicit typenames removed,
+	slist in different namespace).
+
+2002-11-19 23:18  mpeeters
+
+	* Makefile.am (tags: gcc3_2-20021121), Makefile.in, sinmod.cpp
+	(tags: gcc3_2-20021121), sinmod.h (tags: gcc3_2-20021121): Added
+	sinmod, a sinus wave modulator (thanks guy).
+
+2002-11-18 15:38  mpeeters
+
+	* Makefile.am, Makefile.in (utags: STABLE): Forgot to remove
+	ssa.cpp dependency in Makefile! Whoops.
+
+2002-11-18 15:29  mpeeters
+
+	* ChangeLog (tags: gcc3_2-20021121, STABLE): Updated docs and
+	ChangeLog
+
+2002-11-18 15:10  mpeeters
+
+	* rootscan.h (tags: STABLE), ssa.cpp, ssa.h (tags: STABLE): Removed
+	unnecessary ssa.cpp. Added DEBUG in rootscan catch{} routine. Added
+	RC and phase info to the SSA routines.
+
+2002-09-09 15:02  mpeeters
+
+	* Makefile.am, Makefile.in, ssa.cpp, ssa.h
+	(feature-blitz_tinyvector-2002-08): Removed ssa.cpp (again).
+	Correct norm() error in ssa.h - but the wrong way. Drats...
+
+2002-09-09 14:59  mpeeters
+
+	* ssa.cpp (feature-blitz_tinyvector-2002-08): Somehow ssa.cpp was
+	removed. Drats - of course: it was empty - but we should prune it
+	from the makefile !!! So - next comment will be: it is removed.
+
+2002-09-06 00:10  mpeeters
+
+	* numvector.h, ssa.h (feature-blitz_tinyvector-2002-08): Changed
+	norm to Mnorm. Added note.
+
+2002-09-06 00:08  mpeeters
+
+	* ssa.cpp (feature-blitz_tinyvector-2002-08): File not used. 
+	Changed norm to Mnorm.
+
+2002-09-04 10:17  mpeeters
+
+	* Makefile.in, integrator.h (feature-blitz_tinyvector-2002-08):
+	Added optimal optimalisation settings, rewrite of major integrators
+	to take into account the new features of the TinyVector
+
+2002-09-04 00:19  mpeeters
+
+	* Makefile.in, newtonroot.h, normfunction.h, numvector.h,
+	numvectorprint.h, rootscan.h (feature-blitz_tinyvector-2002-08): It
+	works. Woohoo. Now see if it is faster.
+
+2002-09-03 16:27  mpeeters
+
+	* Makefile.am, Makefile.in, invariant.h, linesearch.h, lusolve.h,
+	newtonroot.h, numerictraits.h, numerictypes.h, numvector.h,
+	numvectorprint.h, rootscan.h (feature-blitz_tinyvector-2002-08):
+	Changed to blitz TinyVector<>. "make test" compiles, but segfault
+	just before the small signal analysis.
+
+2002-07-31 13:28  mpeeters
+
+	* bin.cpp, bin.h, Makefile.am, Makefile.in, binprobe.h,
+	dwellprobe.h, integrator.h, lusolve.h, newtonroot.h,
+	numvectorprint.h, odesystem.h, probe.h, random.cpp, random.h,
+	rootscan.h, ticktock.h, vectorfunction.h, ChangeLog
+	(feature-parameterlist-2002-08): Merging the old orphaned branch.
+
+2002-07-31 12:51  mpeeters
+
+	* Makefile.am, Makefile.in, bin.cpp, bin.h, binprobe.h,
+	dwellprobe.h, integrator.h, lusolve.h, modulator.h, newtonroot.h,
+	numvectorprint.h, odesystem.h, parameters.h, parmlist.h, probe.h,
+	random.cpp, random.h, rootscan.h, ssa.h, ticktock.h,
+	vectorfunction.h (feature-parameterlist-2002-08) (utags:
+	admin-insert_ancient_history-2002_07_31-post): Committing changes
+	from an olf orphaned branch.
+
+2002-07-30 21:57  mpeeters
+
+	* ChangeLog (tags: admin-insert_ancient_history-2002_07_31-post),
+	Makefile.am, Makefile.in, bin.cpp (tags: gcc3_2-20021121, STABLE),
+	bin.h (tags: gcc3_2-20021121, STABLE), bin2D.cpp (tags:
+	gcc3_2-20021121, admin-insert_ancient_history-2002_07_31-post,
+	STABLE), bin2D.h (tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-post, STABLE), binprobe.h
+	(tags: gcc3_2-20021121, STABLE), dwellprobe.h (tags:
+	gcc3_2-20021121, STABLE), integrator.h (tags: STABLE), lusolve.h
+	(tags: STABLE), newtonroot.h (tags: STABLE), numvectorprint.h
+	(tags: gcc3_2-20021121, STABLE), odesystem.h (tags: STABLE),
+	probe.h (tags: gcc3_2-20021121, STABLE), random.cpp (tags:
+	gcc3_2-20021121, STABLE), random.h (tags: gcc3_2-20021121, STABLE),
+	rootscan.h, ssa.h, ticktock.h (tags: gcc3_2-20021121, STABLE),
+	vectorfunction.h (tags: gcc3_2-20021121, STABLE) (utags:
+	release-1_0_3-2002_08, trunkmerge-2002_08,
+	admin-insert_ancient_history-2002_07_31-pre): Merge of 1.0.2 branch
+	into trunk. From now on, the trunk will be a stable (meaning it
+	compiles and has no quirks) branch and all special stuff will be
+	done on separate branches waiting to be merged into the stable one.
+	A tag STABLE will be made which moves with the trunk. Also, the
+	main trunk will be considered to be 1.0.3.
+
+2002-07-30 10:59  mpeeters
+
+	* ChangeLog, vectorfunction.h (release-1_0_2-2001_08-stable)
+	(utags: branchmerge-2002_08): Spring cleaning commit -
+	administrative stuff.
+
+2002-07-30 10:39  mpeeters
+
+	* bin.cpp, bin.h, dwellprobe.h (release-1_0_2-2001_08-stable)
+	(utags: branchmerge-2002_08): Added pdf computation to binning
+	stuff (bob).
+
+2002-07-24 12:01  mpeeters
+
+	* random.cpp, random.h (release-1_0_2-2001_08-stable) (utags:
+	branchmerge-2002_08): Changed routines to prevent duplication of
+	seed (but not in an efficient way).
+
+2002-07-24 11:59  mpeeters
+
+	* odesystem.h (tags: branchmerge-2002_08)
+	(release-1_0_2-2001_08-stable): Added possibility to start without
+	predefined starting point.
+
+2002-07-24 11:58  mpeeters
+
+	* dwellprobe.h (release-1_0_2-2001_08-stable): New AVGAVGDwellprobe
+	that computes the average dwelltime of an averaged out trace.
+
+2002-07-24 11:56  mpeeters
+
+	* Makefile.in (tags: branchmerge-2002_08)
+	(release-1_0_2-2001_08-stable): Added bin2D.* dependency.
+
+2002-07-24 11:55  mpeeters
+
+	* binprobe.h (tags: branchmerge-2002_08)
+	(release-1_0_2-2001_08-stable): Better output format.
+
+2002-07-22 23:24  mpeeters
+
+	* ticktock.h (tags: branchmerge-2002_08)
+	(release-1_0_2-2001_08-stable): Defined a default implementation
+	for tick(), so the TickTock class can be used as a way to define a
+	timeframe hierarchy.
+
+2002-07-09 10:40  mpeeters
+
+	* newtonroot.h (tags: branchmerge-2002_08)
+	(release-1_0_2-2001_08-stable): Added explicit type conversion for
+	max(), some compilers (gcc 2.96) fail to convert  otherwise.
+
+2002-07-08 16:49  mpeeters
+
+	* integrator.h (tags: branchmerge-2002_08)
+	(release-1_0_2-2001_08-stable): Major bugfix: the milshtein
+	algorithm (wrongly) used a stratonovich taylor expansion and thus
+	converged to the stratonovich solution. This has been fixed.
+
+2002-07-05 11:04  mpeeters
+
+	* random.h (release-1_0_2-2001_08-stable): Fixed problem with
+	multiple (identical) random generators.
+
+2002-07-01 15:34  mpeeters
+
+	* bin2D.h: file bin2D.h was initially added on branch
+	release-1_0_2-2001_08-stable.
+
+2002-07-01 15:34  mpeeters
+
+	* bin2D.cpp: file bin2D.cpp was initially added on branch
+	release-1_0_2-2001_08-stable.
+
+2002-07-01 15:34  mpeeters
+
+	* bin2D.cpp (tags: branchmerge-2002_08), bin2D.h (tags:
+	branchmerge-2002_08), binprobe.h, Makefile.am (tags:
+	branchmerge-2002_08) (release-1_0_2-2001_08-stable): Added 2D
+	binning class and probe.
+
+2002-06-19 15:19  mpeeters
+
+	* rootscan.h (tags: branchmerge-2002_08)
+	(release-1_0_2-2001_08-stable): Made the select member const, so
+	one can make a subselection of a const list.
+
+2002-06-19 15:17  mpeeters
+
+	* odesystem.h (release-1_0_2-2001_08-stable): Possibility for
+	custom integrator.
+
+2002-06-19 15:15  mpeeters
+
+	* integrator.h (release-1_0_2-2001_08-stable): New integrator
+	manipulators, Euler-Maryuama, transforms.
+
+2002-06-19 15:13  mpeeters
+
+	* dwellprobe.h (release-1_0_2-2001_08-stable): Added threshold
+	functionality with DMZ.
+
+2002-02-06 13:49  mpeeters
+
+	* numvectorprint.h, probe.h (release-1_0_2-2001_08-stable) (utags:
+	branchmerge-2002_08): Altered interface to make fudging easier.
+	Will be reverted.
+
+2002-02-06 13:48  mpeeters
+
+	* newtonroot.h (release-1_0_2-2001_08-stable): Changes minor type
+	error.
+
+2001-11-15 14:33  mpeeters
+
+	* lusolve.h (tags: branchmerge-2002_08)
+	(release-1_0_2-2001_08-stable): Last commit before moving
+	everything to new gcc stdc++ headers (3.0).
+
+2001-11-13 18:59  mpeeters
+
+	* Makefile.in, cowner.cpp, cowner.h, eigenvalues.h, integrator.h,
+	jacobian.h, linesearch.h, lusolve.h, newtonroot.h, numerictypes.h,
+	numvector.h, numvectorprint.h, odesystem.h, random.cpp, random.h,
+	rootscan.h, ssa.h, timeframe.cpp, timeframe.h, vfwithbump.h
+	(release-1_0_2-2001_08-stable_Intel): Modified enough so
+	compilation with INTEL C++ is possible.
+
+2001-10-17 01:48  mpeeters
+
+	* Makefile.in, binprobe.h, cowner.cpp, cowner.h, eigenvalues.h,
+	integrator.h, invariant.h, linesearch.h, lusolve.h, modulator.h,
+	newtonroot.h, numerictypes.h, numvector.h, numvectorprint.h,
+	odesystem.h, probe.cpp, probe.h, random.cpp, random.h,
+	timeframe.cpp, timeframe.h, vectorfunction.h
+	(release-1_0_2-2001_08-stable_KCC): Changes for ANSI compliance of
+	KCC compiler.
+
+2001-10-15 17:09  mpeeters
+
+	* vectorfunction.h (tags: release-1_0_2-2001_08-stable_laststdc++2)
+	(release-1_0_2-2001_08-stable): Finally removed multiline string
+	literal.
+
+2001-10-15 17:08  mpeeters
+
+	* odesystem.h (tags: release-1_0_2-2001_08-stable_laststdc++2)
+	(release-1_0_2-2001_08-stable): Added staring from a different
+	point to make restarting easier.
+
+2001-10-04 14:57  mpeeters
+
+	* binprobe.h, probe.h (release-1_0_2-2001_08-stable) (utags:
+	release-1_0_2-2001_08-stable_laststdc++2): Changed wrong
+	calculation of 1st order digital filter for averaging.
+
+2001-09-03 14:29  mpeeters
+
+	* probe.h (release-1_0_2-2001_08-stable): Bugfix: == should have
+	been =. Bummer.
+
+2001-09-03 12:22  mpeeters
+
+	* dwellprobe.h (tags: release-1_0_2-2001_08-stable_laststdc++2)
+	(release-1_0_2-2001_08-stable): Added extra endl to allow for
+	efficient gnuplot parsing.
+
+2001-09-03 12:06  mpeeters
+
+	* probe.h (release-1_0_2-2001_08-stable): Added parameter to allow
+	for subsampling of output.
+
+2001-08-30 16:48  mpeeters
+
+	* ssa.h (tags: branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2)
+	(release-1_0_2-2001_08-stable): Testing CVS Branching.
+
+2001-08-30 16:46  mpeeters
+
+	* rootscan.h (tags: release-1_0_2-2001_08-stable_laststdc++2)
+	(release-1_0_2-2001_08-stable): Added #ifdef ROOTSCAN_DEBUG to
+	surpress outputting ridiculous amounts of info to cerr.
+
+2001-08-30 16:01  mpeeters
+
+	* ssa.h (release-1_0_2-2001_08-stable): Fixed stupid warning about
+	extra token (due to #endif SSHA_H).
+
+2001-08-30 15:07  mpeeters
+
+	* dwellprobe.h (release-1_0_2-2001_08-stable): Fixed bug #456813,
+	where the binning in BinDwellProbe was inverted.
+
+2001-08-23 23:52  mpeeters
+
+	* parameters.h, parmlist.h (utags: STABLE, release-1_0_3-2002_08,
+	trunkmerge-2002_08, gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-pre): Added new Parameter
+	class files.  Now start work on integrating them with exisiting
+	code.  The nice part will be their ability to load and save
+	parameter sets and an already existing tcltk frontend.
+
+2001-08-23 22:24  mpeeters
+
+	* rootscan.h, vectorfunction.h (utags:
+	release-1_0_1-2001_08-stable): Modified docs to provide correct
+	version info.
+
+2001-07-26 16:15  mpeeters
+
+	* ChangeLog (tags: release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable): Regenerated logs.
+
+2001-07-26 15:39  mpeeters
+
+	* .cvsignore (tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable): The docs changed.
+
+2001-07-26 15:27  mpeeters
+
+	* Makefile.in (tags: release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable): Somehow, these got removed too. I
+	have to learn to unmark the files after an operation. The logs must
+	be a mess.
+
+2001-07-26 15:02  mpeeters
+
+	* Makefile.am (tags: release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable): Somehow, these got removed too.
+	Damn.
+
+2001-07-26 14:08  mpeeters
+
+	* .cvsignore, vfwithbump.h (tags:
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable): Removed a nasty error where the size
+	of the hypersphere used to cut the zero out of existence would be
+	absolute instead of relative. A better (relative) solution was
+	found, but an even better one exists (see todo note).
+
+2001-07-26 14:02  mpeeters
+
+	* ticktock.cpp (tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08),
+	ticktock.h (utags: release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable): Removed nasty bug where time would
+	run backwards in certain cases (see todo list).
+
+2001-07-26 14:01  mpeeters
+
+	* reservoirfunction.h (tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), rootscan.h: Make start point
+	selection easier (add_start). Removed some bugs.
+
+2001-07-26 13:53  mpeeters
+
+	* odesystem.h (tags: release-1_0_1-2001_08-stable): Added
+	constructor for non-stochastic case.  Made sure the initial stat
+	point is found correctly.  Removed unneeded get_dt().
+
+2001-07-26 13:24  mpeeters
+
+	* Makefile.am, mine.cpp: Removed unneeded files.
+
+2001-07-26 13:22  mpeeters
+
+	* Makefile.am: A general cleanup of makefiles to facilitate making
+	distributions.
+
+2001-05-22 13:00  mpeeters
+
+	* ChangeLog: Added Changelog to model/.
+
+2001-05-22 12:54  mpeeters
+
+	* Makefile.am, bin.cpp (tags:
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), bin.h (tags:
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), binprobe.h (tags:
+	release-1_0_1-2001_08-stable), characteristic.h (tags:
+	gcc3_2-20021121, admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), cowner.cpp (tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), cowner.h (tags:
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), cvr3dfunc.h (tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), cycler.cpp (tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), cycler.h (tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), dwellprobe.h (tags:
+	release-1_0_1-2001_08-stable), eigenvalues.h (tags:
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), integrator.h (tags:
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), invariant.h (tags:
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), jacobian.h (tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), linesearch.h (tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), lusolve.h (tags:
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), mine.cpp, minus.h (tags:
+	gcc3_2-20021121, admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), modulator.cpp (tags:
+	gcc3_2-20021121, admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), modulator.h (tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), negfunc.h (tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), newtonroot.h (tags:
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), normfunction.h (tags:
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), numerictraits.h (tags:
+	gcc3_2-20021121, admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), numerictypes.h (tags:
+	gcc3_2-20021121, admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), numvector.h (tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), numvectorprint.h (tags:
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), odesystem.h, parameter.h (tags:
+	gcc3_2-20021121, admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), probe.cpp (tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), probe.h (tags:
+	release-1_0_1-2001_08-stable), radpotfunction.h (tags:
+	gcc3_2-20021121, admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), random.cpp (tags:
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), random.h (tags:
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), reservoirfunction.h, rootscan.h,
+	scalarfunction.h (tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), ssa.cpp (tags:
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), ssa.h (tags:
+	release-1_0_1-2001_08-stable), switchprobe.h (tags:
+	gcc3_2-20021121, admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), ticktock.cpp, ticktock.h,
+	timeframe.cpp (tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), timeframe.h (tags:
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), utility.h (tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), vectorfunction.h, vfamputation.h
+	(tags: gcc3_2-20021121,
+	admin-insert_ancient_history-2002_07_31-post,
+	admin-insert_ancient_history-2002_07_31-pre, STABLE,
+	release-1_0_3-2002_08, trunkmerge-2002_08, branchmerge-2002_08,
+	release-1_0_2-2001_08-stable_laststdc++2,
+	release-1_0_1-2001_08-stable), vfwithbump.h: Moved sources and
+	headers for libModel to model/ subdirectory, in an attempt to
+	rationalize the source tree. This should make things "netter".
+

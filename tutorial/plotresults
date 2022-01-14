@@ -1,0 +1,3 @@
+gnuplot -persist statplot.gp
+gnuplot -persist dynplot.gp
+gnuplot -persist ssa.gp

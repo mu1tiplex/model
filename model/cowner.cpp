@@ -36,9 +36,10 @@ namespace MODEL
   void 
   COwner::remove(Cycler& c)
   {
-	slist<Cycler*>::iterator deadboy=find(c_list.begin(),c_list.end(),&c);
-	if(deadboy!=c_list.end()) c_list.erase(deadboy);
-	else throw(std::logic_error("Tried to remove a cycler that wasn't there in ther first place"));
+    c_list.remove(&c);
+	// slist<Cycler*>::iterator deadboy=find(c_list.begin(),c_list.end(),&c);
+	// if(deadboy!=c_list.end()) c_list.erase_after(deadboy);
+	// else throw(std::logic_error("Tried to remove a cycler that wasn't there in ther first place"));
   }
   
 } // end namespace

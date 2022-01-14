@@ -417,7 +417,7 @@ namespace MODEL {
       // We can use the code from the Millshtein algo to do this.
 
       matrix db;
-      db=jacostoch.calculate(oldcurrent,g);
+      db=jacostoch->calculate(oldcurrent,g);
 
       // apply the correction
       // q-= ... ADD CODE HERE.

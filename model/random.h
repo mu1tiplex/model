@@ -75,7 +75,8 @@ namespace MODEL
 	void seed(integer seed);
 
   private:
-	void Uniform::reshuffle(void);
+	// void Uniform::reshuffle(void);
+	void reshuffle(void);
 
 	static const counter IA=16807;
 	static const counter IM=2147483647;

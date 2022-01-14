@@ -1,0 +1,4 @@
+#!/usr/bin/gnuplot
+load "plotme.gnu"
+print "press return to continue"
+pause -1

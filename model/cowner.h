@@ -29,8 +29,10 @@
 #include <slist.h>
 using std::slist;
 #else
-#include <ext/slist>
-using __gnu_cxx::slist;
+// #include <ext/slist>
+#include <forward_list>
+#define slist forward_list
+// using __gnu_cxx::slist;
 #endif // GCC_VERSION
 #else
 using std::slist;

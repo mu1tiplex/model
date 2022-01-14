@@ -1,0 +1,26 @@
+#other stuff
+pdf: INTRODUCTION.lg
+	lgrind -l c++ -d ./lgrindef -e INTRODUCTION.lg >INTRODUCTION.tex
+	pdflatex INTRODUCTION.tex
+
+README: pdf
+	latex2html -ascii_mode -noimages -nonavigation -noshow_init -address Michael.Peeters@ieee.org -noinfo -split 0 -t "Introduction to MODEL" INTRODUCTION.tex  
+	lynx -dump INTRODUCTION/INTRODUCTION.html > INTRODUCTION.txt
+	csplit INTRODUCTION.txt /Tutorial/
+	mv xx00 README
+	rm -f xx01 INTRODUCTION.txt
+	mv INTRODUCTION/INTRODUCTION.html ./INTRODUCTION.html
+	rm -rf INTRODUCTION
+
+docs: Doxyfile README
+	csplit INTRODUCTION.html /\<BODY\/
+	rm -f xx00
+	mv xx01 INTROTEMP.html
+	csplit INTROTEMP.html /\<H1\>\<A\ NAME\=\"SECTION00040000000000000000\"\>/
+	mv xx00 INTROTEMP.html
+	cat docs_mainpagestart INTROTEMP.html docs_mainpageend >docs_mainpage
+	doxygen
+	rm -f xx01 INTROTEMP.html
+	make -C doc/latex -i pdf
+	cp doc/latex/refman.pdf doc
+

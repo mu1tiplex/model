@@ -1,0 +1,5 @@
+# just a initial test
+# no automatics
+*.in
+#except configure
+!configure.in

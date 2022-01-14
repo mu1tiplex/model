@@ -1,0 +1,77 @@
+
+                             Welcome to MODEL,
+             the Modest Ordinary Differential Equation Library
+                                      
+                              Michael Peeters
+   
+                                   Overview
+                                       
+   MODEL is a numeric simulation library written during my PhD to
+   simulate systems of rate equations describing Vertical Cavity Surface
+   Emitting Lasers (VCSELs). I decided to write one myself after looking
+   at existing libraries and deciding that they were either too
+   complicated to use (having a target user base of mathematicians) or
+   too opaque (i like to know what the code is doing, exactly).
+   
+   Since most of my programming before has been done in C/C++, what you
+   see here is a C++ library composed of various interacting classes
+   which have the following main functionalities:
+   
+     * deterministic integration of any system of well-behaved
+       differential equations.
+     * stochastic integration of these systems, with the possibility of
+       specifying the correlations present in the noise
+     * nonlinear rootfinder, to find stationary solutions
+     * eigenvalue determination, for stability analysis
+     * easy time modulation of input parameters
+     * diverse data collecting classes for data analysis
+     * Small signal analysis (first order)
+       
+   The following will be added RSN:
+   
+     * Fourier transforms, for spectral analysis (although this can be
+       done in an external program)
+     * Periodic solution finder
+       
+   It furthermore provides a numerical vector class, vectorfunction
+   classes, LU solver and random generators.
+   
+   As I developed it using publicly available resources, GNU/Linux and
+   other GPL'ed software, I decided that it should be GPL as well.
+   However (Oh no, a "however" ! Let's hope it does not invalidate the
+   copyleft), I would very much appreciate it if you let me know if you
+   have used MODEL in any of your applications/simulations/research and
+   provide a reference (this way, I can refer to your work, too).
+   
+   At the moment, MODEL has the rather arbitrary version number 1.0.
+   Meaning it is useful. Period. Some interfaces (especially the
+   stochastics) might still change, and I would like to add some ieee
+   floating point exception trapping to avoid silly numerical errors.
+   
+                                 Installation
+                                       
+   Assuming you downloaded a full .tar of checked out the full CVS tree,
+   you first have to make sure everything is configured correctly on your
+   system: run ./configure to generate the correct configuration. Then a
+   simple make or gnumake (on some systems) will do the trick. If you
+   wish to change the option submitted to the compiler, define the
+   environment variable CXXFLAGS to contain those you need (I know there
+   must be a better way to do this). To get it to compile on the Alpha
+   cluster here (www.vub.ac.be/bfucc , I have to export
+   CXXFLAGS="-mieee-malpha-as" before running the configuration script.
+   
+   Once the make process has ended, You should have a libModel.a in the
+   model directory and a singlemode executable in /tutorial. Run it to
+   see if all went well (make test should do the trick). Learn to use
+   gnuplot :-): plot "stepmodulation.dat" u 1:3 w l and admire the
+   relaxation oscillations.
+   
+                                 Documentation
+                                       
+   If you want to generate the introduction, API and tutorial
+   documentation, use make docs. This assumes you have a full teTex
+   distribution, Doxygen and a copy of lgrind to prettyprint the code,
+   however. Your mileage may vary. You can also regenerate the README
+   file by typing make README. YMMVAL. You can generate an introductory
+   PDF file using make pdf.
+   
